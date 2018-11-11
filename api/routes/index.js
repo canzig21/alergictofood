@@ -157,7 +157,7 @@ var itemPatties={
   "category": "food",
   "description": "beef patties",
   "attributes": ["beef","meat"],
-  "image": "https://static-39.sinclairstoryline.com/resources/media/6ff44fc2-378f-4634-96b5-1854ee7f425e-large16x9_Romaine_Lettuce.jpg",
+  "image": "https://static.meijer.com/Media/000/41250/0004125006869_0_A1C1_0600.png",
   "ingredients": [itemBeef],
   "history": [distributor,patties,beef]
 };
@@ -173,7 +173,7 @@ var itemBeanPatties={
 };
 
 var itemBurger =  {
-  "uuid": req.params.item,
+  "uuid": "8b511b04-d010-46e9-beae-835432bcab83",
   "name": "Beef Burger",
   "category": "food",
   "description": "a beef burger",
@@ -182,14 +182,27 @@ var itemBurger =  {
   "ingredients": [itemPatties,itemLettuce,itemTomato,itemCheese],
   "history": [restaurant, distributor]
 }
+var itemBeanBurger = {
+  "uuid": "f9ba016c-a9bf-4ef0-b37d-0a3228b4e908",
+  "name": "Bean Burger",
+  "category": "food",
+  "description": "a bean burger",
+  "attributes": ["cooked", "vegetarian", "vegan", "dairy"],
+  "image": "https://www.bellaviva.com/thumbnail.asp?file=assets/images/dried-fruit/almonds-roasted.jpg",
+  "ingredients": [itemBeanPatties,itemLettuce,itemTomato,itemCheese],
+  "history": [restaurant, distributor]
+}
 var itemDairy= {}
 var itemBeef={}
 
-
-  res.json({
-   itemBurger
-
-  })
+  if(req.params.item == "f9ba016c-a9bf-4ef0-b37d-0a3228b4e908") {
+    res.json({
+      itemBeanBurger
+    })
+  }else{
+    res.json({itemBurger});
+  }
+  
 })
 
 router.get('/getEstablishment', function (req, res, next) {
