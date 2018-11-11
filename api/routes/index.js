@@ -187,9 +187,19 @@ var itemBeanBurger = {
   "name": "Bean Burger",
   "category": "food",
   "description": "a bean burger",
-  "attributes": ["cooked", "vegetarian", "vegan", "dairy"],
+  "attributes": ["cooked", "vegetarian", "dairy"],
   "image": "https://www.bellaviva.com/thumbnail.asp?file=assets/images/dried-fruit/almonds-roasted.jpg",
   "ingredients": [itemBeanPatties,itemLettuce,itemTomato,itemCheese],
+  "history": [restaurant, distributor]
+}
+var itemBeanCheeseBurger = {
+  "uuid": "cb82c658-b2a0-4fa9-8bc0-19d27d1afbe3",
+  "name": "Bean Burger",
+  "category": "food",
+  "description": "a bean burger",
+  "attributes": ["cooked", "vegetarian", "vegan"],
+  "image": "https://www.bellaviva.com/thumbnail.asp?file=assets/images/dried-fruit/almonds-roasted.jpg",
+  "ingredients": [itemBeanPatties,itemLettuce],
   "history": [restaurant, distributor]
 }
 var itemDairy= {}
@@ -199,9 +209,10 @@ var itemBeef={}
     res.json(
       itemBeanBurger
     )
-  }else{
-    res.json(itemBurger);
+  }else if(req.params.item=="cb82c658-b2a0-4fa9-8bc0-19d27d1afbe3"){
+    res.json(itemBeanCheeseBurger);
   }
+  else res.json(itemBurger)
   
 })
 
