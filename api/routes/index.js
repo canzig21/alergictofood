@@ -196,11 +196,11 @@ var itemDairy= {}
 var itemBeef={}
 
   if(req.params.item == "f9ba016c-a9bf-4ef0-b37d-0a3228b4e908") {
-    res.json({
+    res.json(
       itemBeanBurger
-    })
+    )
   }else{
-    res.json({itemBurger});
+    res.json(itemBurger);
   }
   
 })
