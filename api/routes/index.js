@@ -121,20 +121,73 @@ router.get('/getItem/:item', function (req, res, next) {
     location: "Montgomery, OH"
   };
 
-var item =  {
+var itemLettuce={
+  "uuid": "eb7be15b-0f16-45a9-82cd-b7eb1a79c7de",
+  "name": "Lettuce",
+  "category": "food",
+  "description": "lettuce",
+  "attributes": ["vegan","vegetarian"],
+  "image": "https://static-39.sinclairstoryline.com/resources/media/6ff44fc2-378f-4634-96b5-1854ee7f425e-large16x9_Romaine_Lettuce.jpg",
+  "ingredients": [],
+  "history": [distributor,lettuce]
+};
+var itemTomato={
+  "uuid": "e22aec15-478f-4e85-9ade-21ee641d4e1e",
+  "name": "Tomato",
+  "category": "food",
+  "description": "tomato",
+  "attributes": ["vegan","vegetarian"],
+  "image": "https://www.naturalfoodseries.com/wp-content/uploads/2017/10/Tomatoes_Health-800x416.jpg",
+  "ingredients": [],
+  "history": [distributor,tomatoes]
+};
+var itemCheese={
+  "uuid": "eb7be15b-0f16-45a9-82cd-b7eb1a79c7de",
+  "name": "cheese",
+  "category": "food",
+  "description": "cheese",
+  "attributes": ["dairy"],
+  "image": "https://image.shutterstock.com/image-photo/isolated-cheese-chunk-450w-129046673.jpg",
+  "ingredients": [itemDairy],
+  "history": [distributor,cheese,dairy]
+};
+var itemPatties={
+  "uuid": "eb7be15b-0f16-45a9-82cd-b7eb1a79c7de",
+  "name": "Beef patties",
+  "category": "food",
+  "description": "beef patties",
+  "attributes": ["beef","meat"],
+  "image": "https://static-39.sinclairstoryline.com/resources/media/6ff44fc2-378f-4634-96b5-1854ee7f425e-large16x9_Romaine_Lettuce.jpg",
+  "ingredients": [itemBeef],
+  "history": [distributor,patties,beef]
+};
+var itemBeanPatties={
+  "uuid": "eb7be15b-0f16-45a9-82cd-b7eb1a79c7de",
+  "name": "Bean Patties",
+  "category": "food",
+  "description": "bean patties",
+  "attributes": ["vegan","vegetarian"],
+  "image": "https://static-39.sinclairstoryline.com/resources/media/6ff44fc2-378f-4634-96b5-1854ee7f425e-large16x9_Romaine_Lettuce.jpg",
+  "ingredients": [],
+  "history": [distributor,lettuce]
+};
 
+var itemBurger =  {
+  "uuid": req.params.item,
+  "name": "Beef Burger",
+  "category": "food",
+  "description": "a beef burger",
+  "attributes": ["cooked", "beef", "meat", "dairy"],
+  "image": "https://www.bellaviva.com/thumbnail.asp?file=assets/images/dried-fruit/almonds-roasted.jpg",
+  "ingredients": [itemPatties,itemLettuce,itemTomato,itemCheese],
+  "history": [restaurant, distributor]
 }
+var itemDairy= {}
+var itemBeef={}
 
 
   res.json({
-    "uuid": req.params.item,
-    "name": "Beef Burger",
-    "category": "food",
-    "description": "a beef burger",
-    "attributes": ["cooked", "beef", "meat", "dairy"],
-    "image": "https://www.bellaviva.com/thumbnail.asp?file=assets/images/dried-fruit/almonds-roasted.jpg",
-    "ingredients": [],
-    "history": [restaurant, distributor]
+   itemBurger
 
   })
 })
